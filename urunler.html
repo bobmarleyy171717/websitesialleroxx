@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+ <html lang="tr">
+ 
+
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Ürünlerimiz Bantlarımız</title>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  integrity="sha512-…SHA…"
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+  />
+ 
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+ 
+
+  rel="stylesheet" />
+ 
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+ 
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+ 
+
+  integrity="sha512-Fo3rlrZj/k7ujTUc1h3tXTwMBRsn1Gbn/YIt0KT+JXc+Zj8R+YJnqo+UyrI1wcq4+DVZj8qVKa0AdlZWdGUyrg=="
+ 
+
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+ 
+
+  <link rel="stylesheet" href="assets/css/templatemo-chain-app-dev.css" />
+  <link rel="stylesheet" href="assets/css/animated.css" />
+  <link rel="stylesheet" href="assets/css/owl.css" />
+ 
+
+ 
+  <style>
+  /* ---------- YENİ NAVBAR STİLİ ---------- */
+  .navbar {
+  background: rgba(245, 248, 255, 0.98); /* Açık mavi-beyaz ton */
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  padding: 0.6rem 2rem;
+  box-shadow: 0 2px 15px rgba(0,46,109,0.1);
+  position: fixed; /* Sabit pozisyon */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Diğer içeriklerin üzerinde kalması için */
+  }
+ 
+
+  .navbar-brand {
+  margin-right: 0.8rem;
+  }
+ 
+
+  .navbar-brand img {
+  width: 120px;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+  }
+ 
+
+  .navbar-brand img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.05) drop-shadow(0 3px 6px rgba(0,0,0,0.15));
+  }
+ 
+
+  /* --------- NAV LİNKLER --------- */
+  .nav-link {
+  color: #2D3748 !important; /* Koyu gri-mavi */
+  font-weight: 500;
+  padding: 0.65rem 1.4rem !important;
+  margin: 0 0.4rem;
+  border-radius: 8px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  background: rgba(255,255,255,0.7);
+  }
+ 
+
+  .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #4F46E5; /* Soft mor-mavi */
+  transition: all 0.3s ease;
+  }
+ 
+
+  .nav-link:hover {
+  color: #1E40AF !important; /* Derin mavi */
+  background: rgba(79,70,229,0.08);
+  transform: translateY(-1px);
+  }
+ 
+
+  .nav-link:hover::after {
+  width: 100%;
+  left: 0;
+  }
+ 
+
+  /* --------- DROPDOWN MENÜ --------- */
+  .dropdown-menu {
+  background: rgba(255,255,255,0.98);
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  }
+ 
+
+  .dropdown-item {
+  color: #2D3748;
+  padding: 0.7rem 1.5rem;
+  transition: all 0.2s ease;
+  position: relative;
+  }
+ 
+
+  .dropdown-item:hover {
+  background: rgba(79,70,229,0.06);
+  color: #1E40AF;
+  padding-left: 1.8rem;
+  }
+ 
+
+  .dropdown-item::before {
+  content: '';
+  position: absolute;
+  left: 0.5rem;
+  top: 50%;
+  height: 6px;
+  width: 6px;
+  background: #4F46E5;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  }
+ 
+
+  .dropdown-item:hover::before {
+  opacity: 1;
+  }
+ 
+
+  /* AKTİF MENÜ ÖĞESİ */
+  .nav-link.active {
+  background: rgba(79,70,229,0.1);
+  color: #4F46E5 !important;
+  }
+ 
+
+  /* TOGGLER BUTONU */
+  .navbar-toggler {
+  border-color: rgba(0,0,0,0.1);
+  padding: 0.5rem;
+  }
+ 
+
+  .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(45,55,72,0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+ 
+
+  /* MOBİL GÖRÜNÜM */
+  @media (max-width: 991px) {
+  .navbar {
+  padding: 0.6rem 1.5rem;
+  }
+ 
+
+  .navbar-collapse {
+  background: rgba(255,255,255,0.98);
+  padding: 1rem;
+  margin-top: 0.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  }
+ 
+
+  .nav-link {
+  margin: 0.3rem 0;
+  justify-content: flex-start;
+  background: none;
+  }
+ 
+
+  .navbar-brand img {
+  width: 110px;
+  }
+  }
+ 
+
+  /* ---------- YENİ ANA BAŞLIK STİLİ ---------- */
+/* ---------- YENİ ANA BAŞLIK STİLİ ---------- */
+ .main-heading-section {
+  background: linear-gradient(135deg, #e0f7fa, #c5cae9); /* Yumuşak degrade */
+  color: #333;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 2rem;
+  animation: fadeInDown 1s ease-out;
+  padding-top: 120px; /* Navbar ve biraz boşluk için daha yüksek bir değer */
+ }
+
+ .main-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #283593; /* Daha belirgin bir başlık rengi */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+  animation: pulse 1.5s infinite alternate;
+ }
+
+ .main-heading-section .text-muted {
+  color: #555;
+  font-size: 1.1rem;
+ }
+
+ @keyframes fadeInDown {
+  from {
+  opacity: 0;
+  transform: translateY(-20px);
+  }
+  to {
+  opacity: 1;
+  transform: translateY(0);
+  }
+ }
+
+ @keyframes pulse {
+  from {
+  transform: scale(1);
+  }
+  to {
+  transform: scale(1.03);
+  }
+ }
+
+  /* ---------- YENİ GENEL BİLGİ STİLİ ---------- */
+  .highlight-box {
+  background: linear-gradient(45deg, #f1f8e9, #e0f2f7); /* Başka bir yumuşak degrade */
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+  animation: fadeInUp 1s ease-out;
+  border-left: 5px solid #4caf50; /* Vurgulu sol kenarlık */
+  }
+ 
+
+  .highlight-box h2 {
+  color: #388e3c;
+  margin-bottom: 1.5rem;
+  animation: slideInLeft 1s ease-out;
+  }
+ 
+
+  .highlight-box p {
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  }
+ 
+
+  .highlight-box ul {
+  list-style: none;
+  padding-left: 0;
+  }
+ 
+
+  .highlight-box li {
+  color: #555;
+  padding: 0.5rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+  }
+ 
+
+  .highlight-box li::before {
+  content: '\f058'; /* Font Awesome check daire ikonu */
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  color: #43a047;
+  }
+ 
+
+  @keyframes fadeInUp {
+  from {
+  opacity: 0;
+  transform: translateY(20px);
+  }
+  to {
+  opacity: 1;
+  transform: translateY(0);
+  }
+  }
+ 
+
+  @keyframes slideInLeft {
+  from {
+  transform: translateX(-20px);
+  opacity: 0;
+  }
+  to {
+  transform: translateX(0);
+  opacity: 1;
+  }
+  }
+ </style>
+ </head>
+ 
+
+ <body>
+ 
+
+ <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+  <div class="container">
+  <nav class="navbar navbar-expand-lg">
+  <a href="index.html" class="navbar-brand">
+  <img src="assets/images/Picture.png" alt="AlleroX Logo" />
+  </a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+  aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+ 
+
+  <div class="collapse navbar-collapse" id="mainNav">
+  <ul class="navbar-nav ms-auto">
+  <li class="nav-item">
+  <a href="index.html" class="nav-link special-link">Ana Sayfa</a>
+  </li>
+ 
+
+  <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button"
+  data-bs-toggle="dropdown" aria-expanded="false">
+  Ürünler &amp; Teknolojiler
+  </a>
+  <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+  <li><a class="dropdown-item" href="urunler.html">Ürünler</a></li>
+  <li><a class="dropdown-item" href="teknolojiler.html">Teknolojiler</a></li>
+  </ul>
+  </li>
+ 
+
+  <li class="nav-item">
+  <a href="iletisim.html" class="nav-link">İletişim</a>
+  </li>
+  <li class="nav-item">
+  <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
+  </li>
+  </ul>
+  </div>
+  </nav>
+  </div>
+ </header>
+ 
+
+ 
+  <section class="main-heading-section">
+  <div class="container">
+  <h1 class="main-heading">Alerjik Bantlarımız</h1>
+  <p class="text-muted">Alerji teşhisinde devrim yaratan AlleroX bantlarını keşfedin.</p>
+  </div>
+  </section>
+ 
+
+  <section class="py-5">
+  <div class="container">
+  <div class="highlight-box">
+  <h2 class="fw-bold">AlleroX Bantlarıyla Tanışın</h2>
+  <p>AlleroX'un yenilikçi bantları, alerji teşhisini kolaylaştırmak için tasarlanmıştır. Her biri farklı bir alerjen grubuna odaklanır ve hızlı sonuçlar sunar. Kullanıcı dostu tasarımı sayesinde uygulaması oldukça basittir ve profesyonel sonuçlar sunar.</p>
+  <ul>
+  <li><strong>Kullanım Kolaylığı:</strong> Yara bandı formatında pratik uygulama.</li>
+  <li><strong>Kan Örneği Gerektirmez:</strong> İnvaziv olmayan testler.</li>
+  <li><strong>Hızlı ve Doğru Sonuçlar:</strong> Yapay zeka destekli analiz.</li>
+  </ul>
+  </div>
+  </div>
+  </section>
+ 
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+ </body>
+ </html>
+
+  <!-- Ürün Detayları -->
+  <section id="products" class="product-section py-5">
+    <div class="container">
+      <h2 class="text-center mb-5 fw-bold" style="color: #0056b3;">Ürün Detayları</h2>
+  
+      <!-- Ürün 1: Kozmetik İçerikleri Alerjileri -->
+      <div class="row align-items-center mb-5">
+        <div class="col-md-6">
+          <img src="assets/images/kozmetikk.png" alt="Kozmetik Alerjileri" class="img-fluid rounded shadow">
+        </div>
+        <div class="col-md-6">
+          <div class="p-4 shadow-sm" style="border-left: 5px solid #007bff; background-color: #e8f4ff; border-radius: 10px;">
+            <h3 class="fw-bold mb-3" style="color: #007bff;">Kozmetik İçerikleri Alerjileri</h3>
+            <p>Belirli kozmetik içeriklere hassasiyet gösteren kullanıcılar için özel olarak geliştirilmiştir.</p>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item border-0 bg-transparent"><i class="fas fa-check-circle text-primary me-2"></i> Tiomersal</li>
+              <li class="list-group-item border-0 bg-transparent"><i class="fas fa-check-circle text-primary me-2"></i> Fragrans Karışımı</li>
+              <li class="list-group-item border-0 bg-transparent"><i class="fas fa-check-circle text-primary me-2"></i> Potassium Dichromate</li>
+              <li class="list-group-item border-0 bg-transparent"><i class="fas fa-check-circle text-primary me-2"></i> P-phenylenediamine (PPD)</li>
+              <li class="list-group-item border-0 bg-transparent"><i class="fas fa-check-circle text-primary me-2"></i> Methylisothiazolinone</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Ürün 2: Besin Alerjileri -->
+      <div class="row align-items-center mb-5">
+        <div class="col-md-6 order-md-2">
+          <img src="assets/images/besin.png" alt="Besin Alerjileri" class="img-fluid rounded shadow">
+        </div>
+        <div class="col-md-6 order-md-1">
+          <div class="p-4 shadow-sm" style="border-left: 5px solid #28a745; background-color: #ebf7ed; border-radius: 10px;">
+            <h3 class="fw-bold mb-3" style="color: #28a745;">Besin Alerjileri</h3>
+            <p>Yaygın besinlere karşı alerjik reaksiyonların tespit edilmesine yönelik geliştirilmiştir.</p>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item border-0 bg-transparent"><i class="fas fa-check-circle text-success me-2"></i> Süt</li>
+              <li class="list-group-item border-0 bg-transparent"><i class="fas fa-check-circle text-success me-2"></i> Yumurta</li>
+              <li class="list-group-item border-0 bg-transparent"><i class="fas fa-check-circle text-success me-2"></i> Yer Fıstığı</li>
+              <li class="list-group-item border-0 bg-transparent"><i class="fas fa-check-circle text-success me-2"></i> Soya</li>
+              <li class="list-group-item border-0 bg-transparent"><i class="fas fa-check-circle text-success me-2"></i> Kabuklu Deniz Ürünleri</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Ürün 3: Genel Kimyasal Alerjiler -->
+      <div class="row align-items-center mb-5">
+        <div class="col-md-6">
+          <img src="assets/images/genelkimya.png" alt="Genel Kimyasal Alerjiler" class="img-fluid rounded shadow">
+        </div>
+        <div class="col-md-6">
+          <div class="p-4 shadow-sm" style="border-left: 5px solid #dc3545; background-color: #f9e8e8; border-radius: 10px;">
+            <h3 class="fw-bold mb-3" style="color: #dc3545;">Genel Kimyasal Alerjiler</h3>
+            <p>Kimyasal maddelere karşı hassasiyet gösteren kullanıcılar için geliştirilmiştir.</p>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item border-0 bg-transparent"><i class="fas fa-check-circle text-danger me-2"></i> Potasyum Dikromat</li>
+              <li class="list-group-item border-0 bg-transparent"><i class="fas fa-check-circle text-danger me-2"></i> Formaldehit</li>
+              <li class="list-group-item border-0 bg-transparent"><i class="fas fa-check-circle text-danger me-2"></i> Nikel Sülfat</li>
+              <li class="list-group-item border-0 bg-transparent"><i class="fas fa-check-circle text-danger me-2"></i> Kobalt Klorür</li>
+              <li class="list-group-item border-0 bg-transparent"><i class="fas fa-check-circle text-danger me-2"></i> Peru Balsamı</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Ürün 4: Bitkisel İçerik Alerjileri -->
+      <div class="row align-items-center mb-5">
+        <div class="col-md-6 order-md-2">
+          <img src="assets/images/bitki.png" alt="Bitkisel İçerik Alerjileri" class="img-fluid rounded shadow">
+        </div>
+        <div class="col-md-6 order-md-1">
+          <div class="p-4 shadow-sm" style="border-left: 5px solid #ffc107; background-color: #fff8e5; border-radius: 10px;">
+            <h3 class="fw-bold mb-3" style="color: #ffc107;">Bitkisel İçerik Alerjileri</h3>
+            <p>Bitkisel bazlı ürünlere duyarlılığı ölçmek için geliştirilmiştir.</p>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item border-0 bg-transparent"><i class="fas fa-check-circle text-warning me-2"></i> Plantasens Vitamin E Natural 50</li>
+              <li class="list-group-item border-0 bg-transparent"><i class="fas fa-check-circle text-warning me-2"></i> Plantasens Abyssinian Oil</li>
+              <li class="list-group-item border-0 bg-transparent"><i class="fas fa-check-circle text-warning me-2"></i> Plantasens VL</li>
+              <li class="list-group-item border-0 bg-transparent"><i class="fas fa-check-circle text-warning me-2"></i> Plantasens Shea Butter Ref</li>
+              <li class="list-group-item border-0 bg-transparent"><i class="fas fa-check-circle text-warning me-2"></i> Plantasens Cosmetic Wax A4</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Ürün 5: Allergy Kids -->
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <img src="assets/images/cocuk.png" alt="Allergy Kids" class="img-fluid rounded shadow">
+        </div>
+        <div class="col-md-6">
+          <div class="p-4 shadow-sm" style="border-left: 5px solid #17a2b8; background-color: #e8fafd; border-radius: 10px;">
+            <h3 class="fw-bold mb-3" style="color: #17a2b8;">Allergy Kids</h3>
+            <p>Çocuklar için özel geliştirilmiş ve hassasiyetlerini ölçmek için tasarlanmıştır.</p>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item border-0 bg-transparent"><i class="fas fa-check-circle text-info me-2"></i> Çocuklar için güvenli</li>
+              <li class="list-group-item border-0 bg-transparent"><i class="fas fa-check-circle text-info me-2"></i> Hızlı sonuçlar</li>
+              <li class="list-group-item border-0 bg-transparent"><i class="fas fa-check-circle text-info me-2"></i> Kullanıcı dostu tasarım</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AlleroX Bantları Kullanım Butonu -->
+<div class="text-center mt-5">
+  <a href="kullanim.html" class="btn btn-primary btn-lg" style="background: linear-gradient(135deg, #007bff, #00d4ff); border: none; padding: 15px 30px; font-size: 1.5rem; border-radius: 30px; font-weight: bold;">
+    AlleroX Bantları Nasıl Kullanılır?
+  </a>
+</div>
+  <!-- Kutu Tasarımı ve Paket İçeriği Bölümü -->
+<section class="py-5" id="kutu-tasarimi">
+  <div class="container">
+    <h2 class="text-center mb-5 fw-bold" style="color: #0056b3;">Kutu Tasarımı ve Paket İçeriği</h2>
+
+    <div class="row justify-content-center g-4">
+      <!-- Genel Kutu Tasarımları Resmi -->
+      <div class="col-md-6 col-lg-5">
+        <div class="card shadow-sm border-0">
+          <img src="assets/images/kututasarimlari.png" alt="Genel Kutu Tasarımları" class="card-img-top img-fluid rounded" style="max-height: 300px; object-fit: contain;">
+          <div class="card-body text-center">
+            <p class="text-muted mb-0">AllerCy ürünlerine ait genel kutu tasarımları</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tekil Örnek Kutu Resmi -->
+      <div class="col-md-6 col-lg-5">
+        <div class="card shadow-sm border-0">
+          <img src="assets/images/kututasarimi1.png" alt="Örnek Kutu Tasarımı" class="card-img-top img-fluid rounded" style="max-height: 300px; object-fit: contain;">
+          <div class="card-body text-center">
+            <p class="text-muted mb-0">Örnek bir Allergy kutusu tasarımı (yakın görünüm)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kartlar (bilgi kutucukları) -->
+    <div class="row mt-5 g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm border-0 text-center">
+          <div class="card-body">
+            <i class="fas fa-palette fa-3x mb-3 text-primary"></i>
+            <h5 class="card-title fw-bold">Ürün Logosu</h5>
+            <p class="card-text">Ürün adı Allergy olarak belirlenmiş, test içeriğine göre renkler tasarlanmıştır.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm border-0 text-center">
+          <div class="card-body">
+            <i class="fas fa-vials fa-3x mb-3 text-success"></i>
+            <h5 class="card-title fw-bold">Test Bantları</h5>
+            <p class="card-text">6 cm x 12 cm ebatlarında alerjen solüsyon yüklü bantlar içerir.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm border-0 text-center">
+          <div class="card-body">
+            <i class="fas fa-hand-holding-water fa-3x mb-3 text-warning"></i>
+            <h5 class="card-title fw-bold">Alkollü Mendil</h5>
+            <p class="card-text">Pakette 2 adet 7x12 cm alkolsüz mendil bulunur.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm border-0 text-center">
+          <div class="card-body">
+            <i class="fas fa-book-open fa-3x mb-3 text-danger"></i>
+            <h5 class="card-title fw-bold">Kullanım Kılavuzu</h5>
+            <p class="card-text">Paket içeriğinde kullanım ve uyarı kılavuzu yer almaktadır.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- Footer -->
+<!-- 3) Özel CSS -->
+<style>
+  /* Logo boyutunu büyüttük, hover’da zoom */
+  .partner-logo {
+    max-height: 100px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  .partner-logo:hover {
+    transform: scale(1.2);
+  }
+  /* Carousel-item içi padding ile nefes alan görünüm */
+  #partnerCarousel .carousel-item {
+    padding: 1.5rem 0;
+  }
+</style>
+
+  <footer id="allerox-footer" class="text-white pt-5 pb-4" style="background: linear-gradient(135deg, #003366, #002244);">
+    <div class="container text-center text-md-start">
+        <div class="row text-center text-md-start">
+
+            <div class="col-md-4 col-lg-3 mx-auto mt-3">
+                <a href="index.html">
+                    <img src="assets/images/Picture.png" alt="AlleroX Logo" style="width: 150px; margin-bottom: 15px; background: rgba(255,255,255,0.1); padding: 5px; border-radius: 8px;">
+                </a>
+                <p style="font-size: 0.9rem; color: #e0e0e0;">
+                    Alerji teşhisinde devrim yaratan yapay zeka destekli çözümlerle daha sağlıklı bir gelecek.
+                </p>
+            </div>
+
+            <div class="col-md-2 col-lg-2 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 fw-bold" style="color: #99ccff;">Hızlı Erişim</h5>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="#top">Ana Sayfa</a></li>
+                    <li><a href="urunler.html">Ürünler</a></li>
+                    <li><a href="teknolojiler.html">Teknolojiler</a></li>
+                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-3 col-lg-3 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 fw-bold" style="color: #99ccff;">İletişim</h5>
+                <p class="footer-contact-item">
+                    <i class="fas fa-map-marker-alt me-2"></i> Teknopark İstanbul, Türkiye
+                </p>
+                <p class="footer-contact-item">
+                    <i class="fas fa-envelope me-2"></i> <a href="mailto:info@allerox.com">info@allerox.com</a>
+                </p>
+                <p class="footer-contact-item">
+                    <i class="fas fa-phone me-2"></i> <a href="tel:+905555555555">+90 555 555 5555</a>
+                </p>
+            </div>
+
+            <div class="col-md-2 col-lg-2 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 fw-bold" style="color: #99ccff;">Bizi Takip Edin</h5>
+                <div class="social-links d-flex justify-content-center justify-content-md-start">
+                    <a href="https://www.instagram.com/alleroxglobal/" target="_blank" class="btn btn-outline-light btn-floating m-1" role="button" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://tr.linkedin.com/company/allerox" target="_blank" class="btn btn-outline-light btn-floating m-1" role="button" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i> </a>
+                     </div>
+            </div>
+        </div>
+
+        <hr class="my-4" style="border-color: rgba(255, 255, 255, 0.2);">
+
+        <div class="row align-items-center">
+            <div class="col-md-12 text-center">
+                <p style="font-size: 0.9rem; color: #c0c0c0;">
+                    © 2025 AlleroX Sağlık Teknolojileri A.Ş. Tüm Hakları Saklıdır.
+                    </p>
+            </div>
+        </div>
+    </div>
+</footer>
+<style>
+    #allerox-footer {
+        font-size: 0.95rem; /* Base font size for footer */
+    }
+
+    #allerox-footer h5 {
+        font-size: 1.1rem; /* Slightly larger headings */
+        letter-spacing: 0.5px;
+    }
+
+    .footer-links li {
+        margin-bottom: 8px; /* Spacing between links */
+    }
+
+    .footer-links a,
+    .footer-contact-item a {
+        color: #e0e0e0; /* Lighter text for links */
+        text-decoration: none;
+        transition: color 0.3s ease, padding-left 0.3s ease;
+    }
+
+    .footer-links a:hover,
+    .footer-contact-item a:hover {
+        color: #ffc107; /* Accent color on hover */
+        /* text-decoration: underline; Optional underline */
+        padding-left: 5px; /* Slight indent on hover */
+    }
+
+    .footer-contact-item {
+        margin-bottom: 12px; /* Spacing between contact items */
+        display: flex;
+        align-items: center;
+        color: #e0e0e0; /* Match link color */
+    }
+
+     .footer-contact-item i {
+        color: #99ccff; /* Icon color */
+        width: 20px; /* Ensure icons align */
+        text-align: center;
+     }
+
+    .social-links .btn-outline-light {
+        border-color: rgba(255, 255, 255, 0.5);
+        color: rgba(255, 255, 255, 0.8);
+        border-radius: 50%; /* Circular buttons */
+        width: 40px;
+        height: 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .social-links .btn-outline-light:hover {
+        background-color: #ffc107; /* Accent background on hover */
+        color: #002244; /* Dark text on hover */
+        border-color: #ffc107;
+    }
+
+    #allerox-footer hr {
+         border-top: 1px solid rgba(255, 255, 255, 0.2); /* Softer horizontal rule */
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 767.98px) {
+        #allerox-footer .text-md-start {
+            text-align: center !important; /* Center text on smaller screens */
+        }
+        .footer-contact-item {
+             justify-content: center; /* Center contact items */
+        }
+         .social-links {
+            justify-content: center !important; /* Center social links */
+        }
+        #allerox-footer .col-md-4,
+        #allerox-footer .col-md-2,
+        #allerox-footer .col-md-3 {
+            margin-bottom: 25px; /* Add space between columns on mobile */
+        }
+    }
+</style>
+
+
+<!-- CSS Styles -->
+<style>
+  #footer a:hover {
+      text-decoration: underline;
+      color: #f9a825;
+  }
+
+  #footer .fab {
+      transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+
+  #footer .fab:hover {
+      transform: scale(1.2);
+      color: #f9a825;
+  }
+
+  #footer hr {
+      border-top: 2px solid #f9a825;
+      margin: 20px 0;
+  }
+</style>
+
+
+  <!-- Scripts -->
+ 
+ 
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/animation.js"></script>
+  <script src="assets/js/imagesloaded.js"></script>
+  <script src="assets/js/popup.js"></script>
+  <script src="assets/js/custom.js"></script>
+  <!-- Bootstrap ve jQuery JavaScript -->
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

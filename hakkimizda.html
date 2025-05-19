@@ -1,0 +1,887 @@
+
+<!DOCTYPE html>
+
+<html lang="tr">
+
+
+
+<head>
+
+<meta charset="UTF-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+<title>Hakkımızda</title>
+
+
+
+<!-- Google Fonts -->
+<!-- Font Awesome 6 Free -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  integrity="sha512-…SHA…"
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+
+rel="stylesheet" />
+
+
+
+<!-- Bootstrap 5 CSS -->
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+
+
+<!-- Font Awesome -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+
+integrity="sha512-Fo3rlrZj/k7ujTUc1h3tXTwMBRsn1Gbn/YIt0KT+JXc+Zj8R+YJnqo+UyrI1wcq4+DVZj8qVKa0AdlZWdGUyrg=="
+
+crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+<!-- Template CSS -->
+
+<link rel="stylesheet" href="assets/css/templatemo-chain-app-dev.css" />
+
+<link rel="stylesheet" href="assets/css/animated.css" />
+
+<link rel="stylesheet" href="assets/css/owl.css" />
+
+
+<style>
+/* ---------- YENİ NAVBAR STİLİ ---------- */
+.navbar {
+    background: rgba(245, 248, 255, 0.98); /* Açık mavi-beyaz ton */
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding: 0.6rem 2rem;
+    box-shadow: 0 2px 15px rgba(0,46,109,0.1);
+}
+
+.navbar-brand {
+    margin-right: 0.8rem;
+}
+
+.navbar-brand img {
+    width: 120px;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.05) drop-shadow(0 3px 6px rgba(0,0,0,0.15));
+}
+
+/* --------- NAV LİNKLER --------- */
+.nav-link {
+    color: #2D3748 !important; /* Koyu gri-mavi */
+    font-weight: 500;
+    padding: 0.65rem 1.4rem !important;
+    margin: 0 0.4rem;
+    border-radius: 8px;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    background: rgba(255,255,255,0.7);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #4F46E5; /* Soft mor-mavi */
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #1E40AF !important; /* Derin mavi */
+    background: rgba(79,70,229,0.08);
+    transform: translateY(-1px);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* --------- DROPDOWN MENÜ --------- */
+.dropdown-menu {
+    background: rgba(255,255,255,0.98);
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border-radius: 8px;
+    margin-top: 0.5rem;
+}
+
+.dropdown-item {
+    color: #2D3748;
+    padding: 0.7rem 1.5rem;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.dropdown-item:hover {
+    background: rgba(79,70,229,0.06);
+    color: #1E40AF;
+    padding-left: 1.8rem;
+}
+
+.dropdown-item::before {
+    content: '';
+    position: absolute;
+    left: 0.5rem;
+    top: 50%;
+    height: 6px;
+    width: 6px;
+    background: #4F46E5;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.dropdown-item:hover::before {
+    opacity: 1;
+}
+
+/* AKTİF MENÜ ÖĞESİ */
+.nav-link.active {
+    background: rgba(79,70,229,0.1);
+    color: #4F46E5 !important;
+}
+
+/* TOGGLER BUTONU */
+.navbar-toggler {
+    border-color: rgba(0,0,0,0.1);
+    padding: 0.5rem;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(45,55,72,0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* MOBİL GÖRÜNÜM */
+@media (max-width: 991px) {
+    .navbar {
+        padding: 0.6rem 1.5rem;
+    }
+    
+    .navbar-collapse {
+        background: rgba(255,255,255,0.98);
+        padding: 1rem;
+        margin-top: 0.5rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+    
+    .nav-link {
+        margin: 0.3rem 0;
+        justify-content: flex-start;
+        background: none;
+    }
+    
+    .navbar-brand img {
+        width: 110px;
+    }
+}
+</style>
+</head>
+
+
+
+<body>
+
+
+
+<!-- Header/Navbar -->
+
+<header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+
+<div class="container">
+
+<nav class="navbar navbar-expand-lg">
+
+<a href="index.html" class="navbar-brand">
+
+<img src="assets/images/Picture.png" alt="AlleroX Logo" />
+
+</a>
+
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+
+aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+
+
+<div class="collapse navbar-collapse" id="mainNav">
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+
+<a href="index.html" class="nav-link special-link">Ana Sayfa</a>
+
+</li>
+
+
+
+<li class="nav-item dropdown">
+
+<a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button"
+
+data-bs-toggle="dropdown" aria-expanded="false">
+
+Ürünler &amp; Teknolojiler
+
+</a>
+
+<ul class="dropdown-menu" aria-labelledby="productsDropdown">
+
+<li><a class="dropdown-item" href="urunler.html">Ürünler</a></li>
+
+<li><a class="dropdown-item" href="teknolojiler.html">Teknolojiler</a></li>
+
+</ul>
+
+</li>
+
+
+
+<li class="nav-item">
+
+<a href="iletisim.html" class="nav-link">İletişim</a>
+
+</li>
+
+<li class="nav-item">
+
+<a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
+
+</li>
+
+</ul>
+
+</div>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- ***** Main Banner ***** -->
+<div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 align-self-center">
+        <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+          <h2>AlleroX Hakkında</h2>
+          <p>AlleroX Sağlık Teknolojileri A.Ş., yapay zeka destekli sağlık çözümleri geliştirerek hayat kalitenizi artırmayı hedefler.</p>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+          <img src="assets/images/cubetoplufoto.png" alt="AlleroX Hakkında">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+    body {
+        background-color: #f1f8ff;
+    }
+    .info-box {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: none;
+        border-radius: 15px;
+        padding: 30px;
+        text-align: center;
+        background: linear-gradient(135deg, #007bff, #00d4ff);
+        color: #fff;
+        position: relative;
+    }
+    .info-box:hover {
+        transform: scale(1.08);
+        box-shadow: 0 10px 25px rgba(0, 123, 255, 0.6);
+    }
+    .info-title {
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .info-icon {
+        font-size: 3rem;
+        margin-bottom: 15px;
+        color: #fff;
+    }
+    .info-text {
+        font-size: 1rem;
+        margin-bottom: 20px;
+        color: #f8f9fa;
+    }
+    .info-btn {
+        background-color: #fff;
+        color: #007bff;
+        border-radius: 20px;
+        font-weight: bold;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .info-btn:hover {
+        background-color: #0056b3;
+        color: #fff;
+    }
+    .location-card img {
+        height: 200px !important;
+    }
+    .location-image:hover {
+        transform: scale(1.05);
+    }
+</style>
+
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hakkımızda - AlleroX</title>
+
+  <!-- CSS Dosyaları -->
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/templatemo-chain-app-dev.css">
+  <link rel="stylesheet" href="assets/css/animated.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+
+  <!-- Founder Section -->
+<section class="founder-section py-5">
+  <div class="container d-flex align-items-center justify-content-center">
+    <img src="assets/images/SenaHanım.png" alt="Kurucu Ortak & Girişimci" class="founder-image">
+    <div class="founder-info ms-4">
+      <h2 class="founder-title">ECZ. SENA ONUK</h2>
+      <p class="founder-subtitle">Kurucu Ortak ve Girişimci - <strong>ALLEROX Sağlık Teknolojileri A.Ş.</strong></p>
+      <ul class="founder-details">
+        <li>Kök Hücre ve Doku Mühendisliği, Tezli Yüksek Lisans, İSÜ</li>
+        <li>Eczacılık, İstinye Üniversitesi</li>
+        <li>Moleküler Biyoloji Genetik, İstinye Üniversitesi</li>
+        <li>Sağlık Yönetimi, Anadolu Üniversitesi</li>
+        <li>Yönetim Bilişim Sistemleri, İstanbul Üniversitesi</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .founder-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+    background: #ffffff;
+    border-bottom: 2px solid #e0e0e0;
+  }
+
+  .founder-image {
+    max-width: 200px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .founder-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #007bff;
+    background: linear-gradient(135deg, #00d4ff, #007bff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .founder-subtitle {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  .founder-subtitle strong {
+    color: #007bff;
+    font-weight: 700;
+  }
+
+  .founder-details {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+    color: #555;
+    font-size: 1rem;
+  }
+
+  .founder-details li {
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 20px;
+  }
+
+  .founder-details li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #007bff;
+    font-weight: bold;
+  }
+</style>
+
+<!-- Awards Section -->
+<section class="awards-section py-5">
+  <div class="container">
+    <h2 class="text-center mb-5 section-title">BİR START-UP BÜYÜRKEN…</h2>
+    <div id="awardsCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="assets/images/odul1.png" class="d-block w-100" alt="Ödül 1">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/images/odul2.png" class="d-block w-100" alt="Ödül 2">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/images/odul3.png" class="d-block w-100" alt="Ödül 3">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#awardsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Önceki</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#awardsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Sonraki</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<style>
+  .awards-section img {
+    height: 400px;
+    object-fit: cover;
+  }
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #007bff;
+    background: linear-gradient(135deg, #007bff, #00d4ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    position: relative;
+  }
+  .section-title:after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: #007bff;
+    margin: 10px auto 0;
+    border-radius: 2px;
+  }
+</style>
+
+
+<!-- Timeline Section -->
+<section class="timeline-section">
+  <div class="container">
+    <h2 class="text-center mb-5 timeline-title">Şirketimizin Kuruluş ve Gelişim Süreci</h2>
+    <ul class="timeline">
+      <li class="timeline-item">
+        <h4>2017</h4>
+        <p>İSÜ Eczacılık Fakültesi Mezuniyet Projesi başlangıç<img src="assets/images/isu.png" alt="Cube Incubation"></p>
+      </li>
+      <li class="timeline-item">
+        <h4>06.04.2021 - 28.04.2021</h4>
+        <p>Teknopark İstanbul IDEA Cube Programı<img src="assets/images/teknoparkistanbul.png" alt="Cube Incubation"></p>
+      </li>
+      <li class="timeline-item">
+        <h4>06.2021 - 09.2021</h4>
+        <p>ASCOT Klinik Araştırmalar Kuruluşu Stajı<img src="assets/images/ascotscience.png" alt="Cube Incubation"></p>
+      </li>
+      </li>
+      <li class="timeline-item">
+        <h4>30.07.2021</h4>
+        <p>BİGG ön aşamasını geçti</p>
+      </li>
+      <li class="timeline-item">
+        <h4>28.03.2022</h4>
+        <p>2022/1 BİGG Başvurusu ön aşama kabulü</p>
+      </li>
+      <li class="timeline-item">
+        <h4>24.04.2022</h4>
+        <p>Prodis Sistem Başvurusu</p>
+      </li>
+      <li class="timeline-item">
+        <h4>16.05.2022</h4>
+        <p>TEYDEB PRODIS Başvurusu<img src="assets/images/tubitakteydeb.png" alt="Cube Incubation"></p>
+      <li class="timeline-item">
+        <h4>12.06.2022</h4>
+        <p>TÜBİTAK Panel Değerlendirmesi</p>
+      </li>
+      <li class="timeline-item">
+        <h4>24.08.2022</h4>
+        <p>BİGG Desteklerinin Açıklanması<img src="assets/images/bigg.png" alt="Cube Incubation"></p>
+      </li>
+      <li class="timeline-item">
+        <h4>28.08.2022</h4>
+        <p>Cube Incubation Başvurusu <img src="assets/images/cubeincubation.png" alt="Cube Incubation"></p>
+      </li>
+      <li class="timeline-item">
+        <h4>31.08.2022</h4>
+        <p>BİGG Şirketi Kurulum Başlangıcı</p>
+      </li>
+      <li class="timeline-item">
+        <h4>22.09.2022</h4>
+        <p>ALLEROX Sağlık Teknolojileri A.Ş. Kuruldu <img src="assets/images/alleroxlogo.png" alt="Cube Incubation"></p>
+      </li>
+      <li class="timeline-item">
+        <h4>28.10.2022</h4>
+        <p>Cube Incubation Resmi Girişimci Başlangıcı </p>
+      </li>
+      <li class="timeline-item">
+        <h4>01.11.2022</h4>
+        <p>Teknopark Arge Portal Proje Resmi Kayıt </p>
+      </li>
+      <li class="timeline-item">
+        <h4>24.11.2022</h4>
+        <p>BİGG Hibe Desteği Başlangıç <img src="assets/images/bigg.png" alt="BİGG"></p>
+      </li>
+      <li class="timeline-item">
+        <h4>21.12.2022</h4>
+        <p>İlk Resmi Çalışanın (Kurucu Hariç) Eklenmesi </p>
+      </li>
+      <li class="timeline-item">
+        <h4>01.02.2023</h4>
+        <p>Bilim Üsküdar Girişimcilik Merkezi’ne Kabul <img src="assets/images/geleceküsküdar.png" alt="Üsküdar"></p>
+      </li>
+      <li class="timeline-item">
+        <h4>21.03.2023</h4>
+        <p>İlk Stajyerimiz Başladı </p>
+      </li>
+      <li class="timeline-item">
+        <h4>28.04.2023</h4>
+        <p>TÜBİTAK BİÇABA Bursiyerimiz Başladı <img src="assets/images/bicaba.png" alt="BİÇABA"></p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+<style>
+  .timeline-section {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+  }
+  .timeline {
+    position: relative;
+    padding: 0;
+    list-style: none;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .timeline:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #007bff;
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    width: 45%;
+    padding: 20px 30px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .timeline-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  }
+  .timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: left;
+  }
+  .timeline-item:nth-child(even) {
+    left: 55%;
+    text-align: right;
+  }
+  .timeline-item h4 {
+    font-weight: bold;
+    color: #007bff;
+  }
+  .timeline-item img {
+    width: 170px;
+    height: 170px;
+    object-fit: contain;
+  }
+  .timeline-item p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+  .timeline-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #007bff;
+    background: linear-gradient(135deg, #00d4ff, #007bff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+  }
+
+  .timeline-title:after {
+    content: "";
+    display: block;
+    width: 150px;
+    height: 5px;
+    background: #00d4ff;
+    margin: 5px auto 0;
+    border-radius: 2px;
+  }
+
+</style>
+
+
+
+</body>
+</html>
+
+
+  <!-- Footer -->
+<!-- 3) Özel CSS -->
+<style>
+  /* Logo boyutunu büyüttük, hover’da zoom */
+  .partner-logo {
+    max-height: 100px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  .partner-logo:hover {
+    transform: scale(1.2);
+  }
+  /* Carousel-item içi padding ile nefes alan görünüm */
+  #partnerCarousel .carousel-item {
+    padding: 1.5rem 0;
+  }
+</style>
+
+  <footer id="allerox-footer" class="text-white pt-5 pb-4" style="background: linear-gradient(135deg, #003366, #002244);">
+    <div class="container text-center text-md-start">
+        <div class="row text-center text-md-start">
+
+            <div class="col-md-4 col-lg-3 mx-auto mt-3">
+                <a href="index.html">
+                    <img src="assets/images/Picture.png" alt="AlleroX Logo" style="width: 150px; margin-bottom: 15px; background: rgba(255,255,255,0.1); padding: 5px; border-radius: 8px;">
+                </a>
+                <p style="font-size: 0.9rem; color: #e0e0e0;">
+                    Alerji teşhisinde devrim yaratan yapay zeka destekli çözümlerle daha sağlıklı bir gelecek.
+                </p>
+            </div>
+
+            <div class="col-md-2 col-lg-2 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 fw-bold" style="color: #99ccff;">Hızlı Erişim</h5>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="#top">Ana Sayfa</a></li>
+                    <li><a href="urunler.html">Ürünler</a></li>
+                    <li><a href="teknolojiler.html">Teknolojiler</a></li>
+                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-3 col-lg-3 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 fw-bold" style="color: #99ccff;">İletişim</h5>
+                <p class="footer-contact-item">
+                    <i class="fas fa-map-marker-alt me-2"></i> Teknopark İstanbul, Türkiye
+                </p>
+                <p class="footer-contact-item">
+                    <i class="fas fa-envelope me-2"></i> <a href="mailto:info@allerox.com">info@allerox.com</a>
+                </p>
+                <p class="footer-contact-item">
+                    <i class="fas fa-phone me-2"></i> <a href="tel:+905555555555">+90 555 555 5555</a>
+                </p>
+            </div>
+
+            <div class="col-md-2 col-lg-2 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 fw-bold" style="color: #99ccff;">Bizi Takip Edin</h5>
+                <div class="social-links d-flex justify-content-center justify-content-md-start">
+                    <a href="https://www.instagram.com/alleroxglobal/" target="_blank" class="btn btn-outline-light btn-floating m-1" role="button" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://tr.linkedin.com/company/allerox" target="_blank" class="btn btn-outline-light btn-floating m-1" role="button" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i> </a>
+                     </div>
+            </div>
+        </div>
+
+        <hr class="my-4" style="border-color: rgba(255, 255, 255, 0.2);">
+
+        <div class="row align-items-center">
+            <div class="col-md-12 text-center">
+                <p style="font-size: 0.9rem; color: #c0c0c0;">
+                    © 2025 AlleroX Sağlık Teknolojileri A.Ş. Tüm Hakları Saklıdır.
+                    </p>
+            </div>
+        </div>
+    </div>
+</footer>
+<style>
+    #allerox-footer {
+        font-size: 0.95rem; /* Base font size for footer */
+    }
+
+    #allerox-footer h5 {
+        font-size: 1.1rem; /* Slightly larger headings */
+        letter-spacing: 0.5px;
+    }
+
+    .footer-links li {
+        margin-bottom: 8px; /* Spacing between links */
+    }
+
+    .footer-links a,
+    .footer-contact-item a {
+        color: #e0e0e0; /* Lighter text for links */
+        text-decoration: none;
+        transition: color 0.3s ease, padding-left 0.3s ease;
+    }
+
+    .footer-links a:hover,
+    .footer-contact-item a:hover {
+        color: #ffc107; /* Accent color on hover */
+        /* text-decoration: underline; Optional underline */
+        padding-left: 5px; /* Slight indent on hover */
+    }
+
+    .footer-contact-item {
+        margin-bottom: 12px; /* Spacing between contact items */
+        display: flex;
+        align-items: center;
+        color: #e0e0e0; /* Match link color */
+    }
+
+     .footer-contact-item i {
+        color: #99ccff; /* Icon color */
+        width: 20px; /* Ensure icons align */
+        text-align: center;
+     }
+
+    .social-links .btn-outline-light {
+        border-color: rgba(255, 255, 255, 0.5);
+        color: rgba(255, 255, 255, 0.8);
+        border-radius: 50%; /* Circular buttons */
+        width: 40px;
+        height: 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .social-links .btn-outline-light:hover {
+        background-color: #ffc107; /* Accent background on hover */
+        color: #002244; /* Dark text on hover */
+        border-color: #ffc107;
+    }
+
+    #allerox-footer hr {
+         border-top: 1px solid rgba(255, 255, 255, 0.2); /* Softer horizontal rule */
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 767.98px) {
+        #allerox-footer .text-md-start {
+            text-align: center !important; /* Center text on smaller screens */
+        }
+        .footer-contact-item {
+             justify-content: center; /* Center contact items */
+        }
+         .social-links {
+            justify-content: center !important; /* Center social links */
+        }
+        #allerox-footer .col-md-4,
+        #allerox-footer .col-md-2,
+        #allerox-footer .col-md-3 {
+            margin-bottom: 25px; /* Add space between columns on mobile */
+        }
+    }
+</style>
+
+
+<!-- CSS Styles -->
+<style>
+  #footer a:hover {
+      text-decoration: underline;
+      color: #f9a825;
+  }
+
+  #footer .fab {
+      transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+
+  #footer .fab:hover {
+      transform: scale(1.2);
+      color: #f9a825;
+  }
+
+  #footer hr {
+      border-top: 2px solid #f9a825;
+      margin: 20px 0;
+  }
+</style>
+
+
+  <!-- Scripts -->
+ 
+ 
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/animation.js"></script>
+  <script src="assets/js/imagesloaded.js"></script>
+  <script src="assets/js/popup.js"></script>
+  <script src="assets/js/custom.js"></script>
+  <!-- Bootstrap ve jQuery JavaScript -->
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

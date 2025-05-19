@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+
+
+
+<head>
+
+<meta charset="UTF-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+<title>Chain App Dev - App Landing Page</title>
+
+
+
+<!-- Google Fonts -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  integrity="sha512-…SHA…"
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+
+rel="stylesheet" />
+
+
+
+<!-- Bootstrap 5 CSS -->
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+
+
+<!-- Font Awesome -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+
+integrity="sha512-Fo3rlrZj/k7ujTUc1h3tXTwMBRsn1Gbn/YIt0KT+JXc+Zj8R+YJnqo+UyrI1wcq4+DVZj8qVKa0AdlZWdGUyrg=="
+
+crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+<!-- Template CSS -->
+
+<link rel="stylesheet" href="assets/css/templatemo-chain-app-dev.css" />
+
+<link rel="stylesheet" href="assets/css/animated.css" />
+
+<link rel="stylesheet" href="assets/css/owl.css" />
+
+
+<style>
+/* ---------- YENİ NAVBAR STİLİ ---------- */
+.navbar {
+    background: rgba(245, 248, 255, 0.98); /* Açık mavi-beyaz ton */
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding: 0.6rem 2rem;
+    box-shadow: 0 2px 15px rgba(0,46,109,0.1);
+}
+
+.navbar-brand {
+    margin-right: 0.8rem;
+}
+
+.navbar-brand img {
+    width: 120px;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.05) drop-shadow(0 3px 6px rgba(0,0,0,0.15));
+}
+
+/* --------- NAV LİNKLER --------- */
+.nav-link {
+    color: #2D3748 !important; /* Koyu gri-mavi */
+    font-weight: 500;
+    padding: 0.65rem 1.4rem !important;
+    margin: 0 0.4rem;
+    border-radius: 8px;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    background: rgba(255,255,255,0.7);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #4F46E5; /* Soft mor-mavi */
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #1E40AF !important; /* Derin mavi */
+    background: rgba(79,70,229,0.08);
+    transform: translateY(-1px);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* --------- DROPDOWN MENÜ --------- */
+.dropdown-menu {
+    background: rgba(255,255,255,0.98);
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border-radius: 8px;
+    margin-top: 0.5rem;
+}
+
+.dropdown-item {
+    color: #2D3748;
+    padding: 0.7rem 1.5rem;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.dropdown-item:hover {
+    background: rgba(79,70,229,0.06);
+    color: #1E40AF;
+    padding-left: 1.8rem;
+}
+
+.dropdown-item::before {
+    content: '';
+    position: absolute;
+    left: 0.5rem;
+    top: 50%;
+    height: 6px;
+    width: 6px;
+    background: #4F46E5;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.dropdown-item:hover::before {
+    opacity: 1;
+}
+
+/* AKTİF MENÜ ÖĞESİ */
+.nav-link.active {
+    background: rgba(79,70,229,0.1);
+    color: #4F46E5 !important;
+}
+
+/* TOGGLER BUTONU */
+.navbar-toggler {
+    border-color: rgba(0,0,0,0.1);
+    padding: 0.5rem;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(45,55,72,0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* MOBİL GÖRÜNÜM */
+@media (max-width: 991px) {
+    .navbar {
+        padding: 0.6rem 1.5rem;
+    }
+    
+    .navbar-collapse {
+        background: rgba(255,255,255,0.98);
+        padding: 1rem;
+        margin-top: 0.5rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+    
+    .nav-link {
+        margin: 0.3rem 0;
+        justify-content: flex-start;
+        background: none;
+    }
+    
+    .navbar-brand img {
+        width: 110px;
+    }
+}
+</style>
+</head>
+
+
+
+<body>
+
+
+
+<!-- Header/Navbar -->
+
+<header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+
+<div class="container">
+
+<nav class="navbar navbar-expand-lg">
+
+<a href="index.html" class="navbar-brand">
+
+<img src="assets/images/Picture.png" alt="AlleroX Logo" />
+
+</a>
+
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+
+aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+
+
+<div class="collapse navbar-collapse" id="mainNav">
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+
+<a href="index.html" class="nav-link special-link">Ana Sayfa</a>
+
+</li>
+
+
+
+<li class="nav-item dropdown">
+
+<a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button"
+
+data-bs-toggle="dropdown" aria-expanded="false">
+
+Ürünler &amp; Teknolojiler
+
+</a>
+
+<ul class="dropdown-menu" aria-labelledby="productsDropdown">
+
+<li><a class="dropdown-item" href="urunler.html">Ürünler</a></li>
+
+<li><a class="dropdown-item" href="teknolojiler.html">Teknolojiler</a></li>
+
+</ul>
+
+</li>
+
+
+
+<li class="nav-item">
+
+<a href="iletisim.html" class="nav-link">İletişim</a>
+
+</li>
+
+<li class="nav-item">
+
+<a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
+
+</li>
+
+</ul>
+
+</div>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<!-- 
+2. bölüm
+
+-->
+
+<div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-6 align-self-center">
+                        <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h2>Devrim Yaratan Alerji Testi: AlleroX</h2>
+                                    <p>AlleroX Sağlık Teknolojileri A.Ş., evde kolayca uygulanabilen Alerji Tanı Bandı ve yapay zeka destekli mobil uygulama ile alerji teşhisinde yeni bir dönem başlatıyor.</p>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="white-button first-button scroll-to-section">
+                                        <a href="urunler.html">Ürünlerimizi Keşfedin <i class="fas fa-flask"></i></a>
+                                    </div>
+                                    <div class="white-button scroll-to-section">
+                                        <a href="iletisim.html">Bize Ulaşın <i class="fas fa-envelope"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+                            <img src="assets/images/besbant.png" alt="AlleroX Alerji Tanı Bandı ve Mobil Uygulama">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- 
+2. bölüm son 
+
+-->
+
+
+<!-- 
+3. bölüm  
+
+-->
+
+<div id="services" class="services section">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-8 offset-lg-2">
+              <div class="section-heading wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+                  <h4>Yenilikçi <em>Hizmetler & Özellikler</em> Sizin İçin</h4>
+                  <img src="assets/images/heading-line-dec.png" alt="">
+                  <p>AlleroX Sağlık Teknolojileri A.Ş., alerji teşhisinde kolaylık, doğruluk ve erişilebilirlik sunarak hayatınızı kolaylaştırmayı hedefler. Alerji tanı bandımız ve yapay zeka tabanlı mobil uygulamamızla alerji sorunlarınıza yenilikçi çözümler sunuyoruz.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="container">
+      <div class="row">
+          <!-- Feature 1 -->
+          <div class="col-lg-3">
+              <div class="service-item first-service">
+                  <div class="icon"><i class="fas fa-flask"></i></div>
+                  <h4>Evde Alerji Testi</h4>
+                  <p>Alerji tanı bandımız, ev ortamında kolaylıkla uygulanabilir ve hızlı sonuç verir.</p>
+                  
+              </div>
+          </div>
+          <!-- Feature 2 -->
+          <div class="col-lg-3">
+              <div class="service-item second-service">
+                  <div class="icon"><i class="fas fa-mobile-alt"></i></div>
+                  <h4>Yapay Zeka Analizi</h4>
+                  <p>Mobil uygulamamız, alerji reaksiyonlarını analiz ederek kişisel sonuçlar sunar.</p>
+                  
+              </div>
+          </div>
+          <!-- Feature 3 -->
+          <div class="col-lg-3">
+              <div class="service-item third-service">
+                  <div class="icon"><i class="fas fa-lightbulb"></i></div>
+                  <h4>Kişiselleştirilmiş Alerji Asistanı</h4>
+                  <p>Alerji geçmişinizi takip ederek size özel diyet ve yaşam tarzı önerileri sunar.</p>
+                
+              </div>
+          </div>
+          <!-- Feature 4 -->
+          <div class="col-lg-3">
+              <div class="service-item fourth-service">
+                  <div class="icon"><i class="fas fa-handshake"></i></div>
+                  <h4>24/7 Destek</h4>
+                  <p>Her zaman yanınızdayız! Sorularınız ve ihtiyaçlarınız için bize ulaşabilirsiniz.</p>
+                  
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<!-- 
+3. bölüm son 
+
+-->
+
+
+
+
+
+<!-- 
+4. bölüm  
+
+-->
+<div id="team" class="about-app section py-5">
+  <div class="container">
+      <div class="text-center mb-5">
+          <h4 class="fw-bold">Mobil Uygulamamız <em>Hakkında</em></h4>
+          <div class="text-center mt-5">
+            <a href="teknolojiler.html" class="btn custom-arrow-btn">
+                Daha Fazlası <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+        
+        <style>
+        .custom-arrow-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #007bff, #00d4ff);
+            color: white;
+            font-size: 1.5rem;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: none;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .custom-arrow-btn:hover {
+            background: linear-gradient(135deg, #ffc107, #ff9100);
+            color: #ffffff;
+            transform: translateX(5px);
+        }
+        
+        .custom-arrow-btn i {
+            transition: transform 0.3s ease;
+        }
+        
+        .custom-arrow-btn:hover i {
+            transform: translateX(5px);
+        }
+        </style>
+        
+        
+        
+          <p class="text-muted">AlleroX mobil uygulaması, alerji teşhisinde devrim yaratmayı hedefleyen bir çözümdür. İşte başlıca özellikleri:</p>
+      </div>
+      <div class="row gy-4">
+          <!-- Feature 1 -->
+          <div class="col-md-4">
+              <div class="feature-box d-flex flex-column align-items-center text-center p-4 position-relative">
+                  <div class="circle-box mb-3">
+                      <i class="fas fa-mobile-alt fa-3x"></i>
+                  </div>
+                  <h5 class="fw-bold">Kullanıcı Arayüzü</h5>
+                  <p class="text-muted mb-0">Basit ve kullanıcı dostu tasarım ile kolay kullanım.</p>
+              
+              </div>
+          </div>
+          <!-- Feature 2 -->
+          <div class="col-md-4">
+              <div class="feature-box d-flex flex-column align-items-center text-center p-4 position-relative">
+                  <div class="circle-box mb-3">
+                      <i class="fas fa-flask fa-3x"></i>
+                  </div>
+                  <h5 class="fw-bold">Test ve Analiz</h5>
+                  <p class="text-muted mb-0">Fotoğraf yükleyerek veya manuel veri girerek analiz yapın.</p>
+                 
+              </div>
+          </div>
+          <!-- Feature 3 -->
+          <div class="col-md-4">
+              <div class="feature-box d-flex flex-column align-items-center text-center p-4 position-relative">
+                  <div class="circle-box mb-3">
+                      <i class="fas fa-bell fa-3x"></i>
+                  </div>
+                  <h5 class="fw-bold">Bildirimler</h5>
+                  <p class="text-muted mb-0">Test hatırlatıcıları ve acil durum bildirimleri.</p>
+                 
+              </div>
+          </div>
+          <!-- Feature 4 -->
+          <div class="col-md-4">
+              <div class="feature-box d-flex flex-column align-items-center text-center p-4 position-relative">
+                  <div class="circle-box mb-3">
+                      <i class="fas fa-lock fa-3x"></i>
+                  </div>
+                  <h5 class="fw-bold">Güvenlik</h5>
+                  <p class="text-muted mb-0">İleri düzey şifreleme ile verileriniz güvende.</p>
+                 
+              </div>
+          </div>
+          <!-- Font Awesome 6 Free -->
+
+
+          <!-- Feature 5 -->
+          <div class="col-md-4">
+              <div class="feature-box d-flex flex-column align-items-center text-center p-4 position-relative">
+                  <div class="circle-box mb-3">
+                      <i class="fas fa-user-md fa-3x"></i>
+                  </div>
+                  <h5 class="fw-bold">Doktor Entegrasyonu</h5>
+                  <p class="text-muted mb-0">Test sonuçlarınızı doktorunuzla paylaşabilirsiniz.</p>
+                
+              </div>
+          </div>
+          <!-- Feature 6 -->
+          <div class="col-md-4">
+              <div class="feature-box d-flex flex-column align-items-center text-center p-4 position-relative">
+                  <div class="circle-box mb-3">
+                      <i class="fas fa-chart-line fa-3x"></i>
+                  </div>
+                  <h5 class="fw-bold">Veri Analizi</h5>
+                  <p class="text-muted mb-0">Toplanan verilerle alerji eğilimlerini inceleyin.</p>
+                 
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- CSS Styles -->
+
+<style>
+  .feature-box {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  }
+
+  .feature-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
+      background-color: #e6f7ff;
+  }
+
+  .circle-box {
+      width: 80px;
+      height: 80px;
+      background-color: #dff9fb;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease-in-out;
+  }
+
+  .circle-box:hover {
+      background-color: #00a8ff;
+  }
+
+  .overlay {
+      display: none;
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #333;
+      padding: 20px;
+      border-radius: 12px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .feature-box:hover .overlay {
+      display: flex;
+  }
+
+  .about-app .text-center p {
+      margin-bottom: 20px;
+      font-size: 1rem;
+      color: #555;
+  }
+
+  .about-app h5 {
+      font-size: 1.25rem;
+      color: #007bff;
+  }
+
+  .about-app h4 {
+      color: #222;
+  }
+</style>
+
+
+
+
+<!-- 
+4. bölüm  son 
+
+-->
+
+
+<!-- 
+5. bölüm  
+
+-->
+<style>
+    body {
+        background-color: #f1f8ff;
+    }
+    .info-box {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: none;
+        border-radius: 15px;
+        padding: 30px;
+        text-align: center;
+        background: linear-gradient(135deg, #007bff, #00d4ff);
+        color: #fff;
+        position: relative;
+            width: 100%;          /* Kutunun kapsayıcıyı tam doldurması için */
+
+    }
+    .info-box:hover {
+        transform: scale(1.08);
+        box-shadow: 0 10px 25px rgba(0, 123, 255, 0.6);
+    }
+    .info-title {
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .info-icon {
+        font-size: 3rem;
+        margin-bottom: 15px;
+        color: #fff;
+    }
+    .info-text {
+        font-size: 1rem;
+        margin-bottom: 20px;
+        color: #f8f9fa;
+    }
+    .info-btn {
+        background-color: #fff;
+        color: #007bff;
+        border-radius: 20px;
+        font-weight: bold;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .info-btn:hover {
+        background-color: #0056b3;
+        color: #fff;
+    }
+    .location-card img {
+        height: 200px !important;
+    }
+    .location-image:hover {
+        transform: scale(1.05);
+    }
+</style>
+<div class="container py-5">
+  <h1 class="text-center mb-5 text-primary">Hakkımızda: Kimiz & Ne Yapıyoruz</h1>
+  <div class="row g-4">
+    <!-- Her sütuna d-flex ve info-box'a flex-fill ekleyin -->
+    <div class="col-md-6 col-lg-3 d-flex">
+      <div class="info-box flex-fill">
+        <div class="info-icon"><i class="fas fa-history"></i></div>
+        <div class="info-title">Kuruluş Hikayesi</div>
+        <div class="info-text">2022 yılında, TÜBİTAK 1512 BİGG desteğiyle girişimimizi başlattık ve Cube Incubation programına katıldık.</div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3 d-flex">
+      <div class="info-box flex-fill">
+        <div class="info-icon"><i class="fas fa-eye"></i></div>
+        <div class="info-title">Vizyonumuz</div>
+        <div class="info-text">Alerji teşhisinde kolaylık ve doğruluğu artırarak dünya genelinde sağlık teknolojilerinde lider olmak.</div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3 d-flex">
+      <div class="info-box flex-fill">
+        <div class="info-icon"><i class="fas fa-bullseye"></i></div>
+        <div class="info-title">Misyonumuz</div>
+        <div class="info-text">Alerji teşhisini evde erişilebilir hale getirerek bireylerin yaşam kalitesini artırmak.</div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3 d-flex">
+      <div class="info-box flex-fill">
+        <div class="info-icon"><i class="fas fa-award"></i></div>
+        <div class="info-title">Başarılarımız</div>
+        <div class="info-text">TET Proje Pazarı’nda Sağlık Uygulamaları kategorisinde ilk 3 ve Gelecek Vadeden Girişimler Yarışmasında finalistlik.</div>
+        <!-- <a href="hakkimizda.html" class="btn info-btn">Daha Fazla</a> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CSS Styles for Buttons -->
+<style>
+    .info-btn {
+        background-color: #007bff;
+        color: #ffffff;
+        padding: 10px 20px;
+        font-weight: bold;
+        border-radius: 20px;
+        transition: background-color 0.3s, color 0.3s;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .info-btn:hover {
+        background-color: #0056b3;
+        color: #ffffff;
+    }
+</style>
+
+
+  <!-- 
+  5. bölüm  son 
+                    <img src="assets/images/heading-line-dec.png" alt="">
+
+  -->
+  <!-- ÖNCE: Aşağıdaki CSS'i <head> içinde ya da projenizin ortak CSS dosyanıza ekleyin -->
+<style>
+  .location-card {
+    border: none;
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .location-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  }
+  .location-card .image-wrapper {
+    height: 180px;
+    overflow: hidden;
+  }
+  .location-card .image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .location-card:hover .image-wrapper img {
+    transform: scale(1.1);
+  }
+  .location-card .card-body {
+    padding: 1.25rem;
+  }
+  .location-card .btn {
+    border-radius: 50rem;
+    padding: 0.5rem 1.5rem;
+  }
+</style>
+
+<!-- SONRA: HTML yapınızı aşağıdaki gibi güncelleyin -->
+<div class="container my-5">
+  <h1 class="text-center mb-4 display-4 fw-bold text-primary">NERELERDEYİZ</h1>
+  <div class="row g-4">
+    <!-- Her kart için col-12 / col-md-6 / col-lg-3 kullanarak eşit genişlik -->
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="card location-card h-100 shadow-sm">
+        <div class="image-wrapper">
+          <img src="assets/images/teknoparkistanbul.png" alt="Teknopark Istanbul">
+        </div>
+        <div class="card-body text-center">
+          <h5 class="card-title text-primary fw-semibold">Teknopark Istanbul</h5>
+          <a href="https://www.google.com/maps?q=Teknopark+İstanbul&ll=40.8587,29.2866&z=15"
+             target="_blank"
+             class="btn btn-primary mt-3">
+            Daha Fazla
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="card location-card h-100 shadow-sm">
+        <div class="image-wrapper">
+          <img src="assets/images/cubeincubation.png" alt="Cube Incubation">
+        </div>
+        <div class="card-body text-center">
+          <h5 class="card-title text-success fw-semibold">Cube Incubation</h5>
+          <a href="https://www.google.com/maps?q=Cube+Incubation&ll=40.8579,29.2872&z=15"
+             target="_blank"
+             class="btn btn-success mt-3">
+            Daha Fazla
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="card location-card h-100 shadow-sm">
+        <div class="image-wrapper">
+          <img src="assets/images/bilgiticarimerkez.png" alt="Bilgiyi Ticaretleştirme Merkezi">
+        </div>
+        <div class="card-body text-center">
+          <h5 class="card-title text-warning fw-semibold">Bilgiyi Ticaretleştirme Merkezi</h5>
+          <a href="https://www.google.com/maps?q=Bilgi+Ticaretleştirme+Merkezi&ll=40.8663,29.2197&z=15"
+             target="_blank"
+             class="btn btn-warning mt-3">
+            Daha Fazla
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="card location-card h-100 shadow-sm">
+        <div class="image-wrapper">
+          <img src="assets/images/geleceküsküdar.png" alt="Gelecek Üsküdar">
+        </div>
+        <div class="card-body text-center">
+          <h5 class="card-title text-danger fw-semibold">Gelecek Üsküdar</h5>
+          <a href="https://www.google.com/maps?q=Gelecek+Üsküdar&ll=41.0328,29.0256&z=15"
+             target="_blank"
+             class="btn btn-danger mt-3">
+            Daha Fazla
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CSS: Görsel Boyut ve Oran Ayarları -->
+<style>
+.image-wrapper {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.image-wrapper img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+</style>
+
+
+
+
+<<!-- PAYDAŞLARIMIZ BÖLÜMÜ -->
+<div class="container py-5">
+    <h2 class="text-center text-primary fw-bold mb-4">Paydaşlarımız</h2>
+    <div class="position-relative">
+      <!-- Sol Ok -->
+      <button class="btn btn-outline-primary position-absolute top-50 start-0 translate-middle-y z-1" id="prevBtn">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+  
+      <!-- Logo Alanı -->
+      <div class="overflow-hidden" id="logoWrapper">
+        <div class="d-flex gap-4 px-4" id="logoTrack">
+          <img src="assets/images/paydas1.png" class="logo-img">
+          <img src="assets/images/paydas2.png" class="logo-img">
+          <img src="assets/images/paydas3.png" class="logo-img">
+          <img src="assets/images/paydas4.png" class="logo-img">
+          <img src="assets/images/paydas5.png" class="logo-img">
+          <img src="assets/images/paydas6.png" class="logo-img">
+          <img src="assets/images/paydas7.png" class="logo-img">
+          <img src="assets/images/paydas8.png" class="logo-img">
+          <img src="assets/images/paydas9.png" class="logo-img">
+          <img src="assets/images/paydas10.png" class="logo-img">
+          <img src="assets/images/paydas11.png" class="logo-img">
+          <img src="assets/images/paydas12.png" class="logo-img">
+          <img src="assets/images/paydas13.png" class="logo-img">
+          <img src="assets/images/paydas14.png" class="logo-img">
+          <img src="assets/images/paydas15.png" class="logo-img">
+          <img src="assets/images/paydas16.png" class="logo-img">
+          <img src="assets/images/paydas17.png" class="logo-img">
+          <img src="assets/images/paydas18.png" class="logo-img">
+          <img src="assets/images/paydas19.png" class="logo-img">
+          <img src="assets/images/paydas20.png" class="logo-img">
+          <img src="assets/images/paydas21.png" class="logo-img">
+          <img src="assets/images/paydas22.png" class="logo-img">
+
+        </div>
+      </div>
+  
+      <!-- Sağ Ok -->
+      <button class="btn btn-outline-primary position-absolute top-50 end-0 translate-middle-y z-1" id="nextBtn">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+  
+  <!-- CSS -->
+  <style>
+    #logoWrapper {
+      overflow-x: scroll;
+      scroll-behavior: smooth;
+    }
+  
+    #logoTrack {
+      white-space: nowrap;
+    }
+  
+    .logo-img {
+      height: 80px;
+      width: auto;
+      flex-shrink: 0;
+    }
+  </style>
+  
+  <!-- JS -->
+  <script>
+    const wrapper = document.getElementById('logoWrapper');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+  
+    const scrollAmount = 250; // Her tıklamada kayacak mesafe (px)
+  
+    nextBtn.addEventListener('click', () => {
+      wrapper.scrollLeft += scrollAmount;
+    });
+  
+    prevBtn.addEventListener('click', () => {
+      wrapper.scrollLeft -= scrollAmount;
+    });
+  
+    // Otomatik kaydırma (her 3 saniyede bir)
+    setInterval(() => {
+      wrapper.scrollLeft += scrollAmount;
+    }, 3000);
+  </script>
+  <footer id="allerox-footer" class="text-white pt-5 pb-4" style="background: linear-gradient(135deg, #003366, #002244);">
+    <div class="container text-center text-md-start">
+        <div class="row text-center text-md-start">
+
+            <div class="col-md-4 col-lg-3 mx-auto mt-3">
+                <a href="index.html">
+                    <img src="assets/images/Picture.png" alt="AlleroX Logo" style="width: 150px; margin-bottom: 15px; background: rgba(255,255,255,0.1); padding: 5px; border-radius: 8px;">
+                </a>
+                <p style="font-size: 0.9rem; color: #e0e0e0;">
+                    Alerji teşhisinde devrim yaratan yapay zeka destekli çözümlerle daha sağlıklı bir gelecek.
+                </p>
+            </div>
+
+            <div class="col-md-2 col-lg-2 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 fw-bold" style="color: #99ccff;">Hızlı Erişim</h5>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="#top">Ana Sayfa</a></li>
+                    <li><a href="urunler.html">Ürünler</a></li>
+                    <li><a href="teknolojiler.html">Teknolojiler</a></li>
+                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-3 col-lg-3 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 fw-bold" style="color: #99ccff;">İletişim</h5>
+                <p class="footer-contact-item">
+                    <i class="fas fa-map-marker-alt me-2"></i> Teknopark İstanbul, Türkiye
+                </p>
+                <p class="footer-contact-item">
+                    <i class="fas fa-envelope me-2"></i> <a href="mailto:info@allerox.com">info@allerox.com</a>
+                </p>
+                <p class="footer-contact-item">
+                    <i class="fas fa-phone me-2"></i> <a href="tel:+905555555555">+90 555 555 5555</a>
+                </p>
+            </div>
+
+            <div class="col-md-2 col-lg-2 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 fw-bold" style="color: #99ccff;">Bizi Takip Edin</h5>
+                <div class="social-links d-flex justify-content-center justify-content-md-start">
+                    <a href="https://www.instagram.com/alleroxglobal/" target="_blank" class="btn btn-outline-light btn-floating m-1" role="button" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://tr.linkedin.com/company/allerox" target="_blank" class="btn btn-outline-light btn-floating m-1" role="button" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i> </a>
+                     </div>
+            </div>
+        </div>
+
+        <hr class="my-4" style="border-color: rgba(255, 255, 255, 0.2);">
+
+        <div class="row align-items-center">
+            <div class="col-md-12 text-center">
+                <p style="font-size: 0.9rem; color: #c0c0c0;">
+                    © 2025 AlleroX Sağlık Teknolojileri A.Ş. Tüm Hakları Saklıdır.
+                    </p>
+            </div>
+        </div>
+    </div>
+</footer>
+<style>
+    #allerox-footer {
+        font-size: 0.95rem; /* Base font size for footer */
+    }
+
+    #allerox-footer h5 {
+        font-size: 1.1rem; /* Slightly larger headings */
+        letter-spacing: 0.5px;
+    }
+
+    .footer-links li {
+        margin-bottom: 8px; /* Spacing between links */
+    }
+
+    .footer-links a,
+    .footer-contact-item a {
+        color: #e0e0e0; /* Lighter text for links */
+        text-decoration: none;
+        transition: color 0.3s ease, padding-left 0.3s ease;
+    }
+
+    .footer-links a:hover,
+    .footer-contact-item a:hover {
+        color: #ffc107; /* Accent color on hover */
+        /* text-decoration: underline; Optional underline */
+        padding-left: 5px; /* Slight indent on hover */
+    }
+
+    .footer-contact-item {
+        margin-bottom: 12px; /* Spacing between contact items */
+        display: flex;
+        align-items: center;
+        color: #e0e0e0; /* Match link color */
+    }
+
+     .footer-contact-item i {
+        color: #99ccff; /* Icon color */
+        width: 20px; /* Ensure icons align */
+        text-align: center;
+     }
+
+    .social-links .btn-outline-light {
+        border-color: rgba(255, 255, 255, 0.5);
+        color: rgba(255, 255, 255, 0.8);
+        border-radius: 50%; /* Circular buttons */
+        width: 40px;
+        height: 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .social-links .btn-outline-light:hover {
+        background-color: #ffc107; /* Accent background on hover */
+        color: #002244; /* Dark text on hover */
+        border-color: #ffc107;
+    }
+
+    #allerox-footer hr {
+         border-top: 1px solid rgba(255, 255, 255, 0.2); /* Softer horizontal rule */
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 767.98px) {
+        #allerox-footer .text-md-start {
+            text-align: center !important; /* Center text on smaller screens */
+        }
+        .footer-contact-item {
+             justify-content: center; /* Center contact items */
+        }
+         .social-links {
+            justify-content: center !important; /* Center social links */
+        }
+        #allerox-footer .col-md-4,
+        #allerox-footer .col-md-2,
+        #allerox-footer .col-md-3 {
+            margin-bottom: 25px; /* Add space between columns on mobile */
+        }
+    }
+</style>
+
+
+<!-- CSS Styles -->
+<style>
+  #footer a:hover {
+      text-decoration: underline;
+      color: #f9a825;
+  }
+
+  #footer .fab {
+      transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+
+  #footer .fab:hover {
+      transform: scale(1.2);
+      color: #f9a825;
+  }
+
+  #footer hr {
+      border-top: 2px solid #f9a825;
+      margin: 20px 0;
+  }
+</style>
+
+
+  <!-- Scripts -->
+ 
+ 
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/animation.js"></script>
+  <script src="assets/js/imagesloaded.js"></script>
+  <script src="assets/js/popup.js"></script>
+  <script src="assets/js/custom.js"></script>
+  <!-- Bootstrap ve jQuery JavaScript -->
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
